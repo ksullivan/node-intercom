@@ -107,8 +107,9 @@ exports.app = function(config) {
 
         var args = {
           "method": "DELETE",
-          "url": "https://api.intercom.io/v1/users/?" + params,
-          "headers": { "Authorization": sign() }
+          "url": "https://api.intercom.io/v1/users/",
+          "headers": { "Authorization": sign() },
+          "body": JSON.stringify(data)
         }
 
         return request(args, function(e, r, body) {
